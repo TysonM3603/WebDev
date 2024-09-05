@@ -1,7 +1,11 @@
-.title-style
-{
-    text-align: center;
-    font-size: xxx-large;
-    font-weight: bold;
-    text-decoration: underline;
+.title-style {
+  text-align: center;
+  font-size: xxx-large;
+  font-weight: bold;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }

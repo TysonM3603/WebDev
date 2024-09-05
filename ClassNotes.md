@@ -1,14 +1,11 @@
 Class Notes
 August 27
 HTML
-- Markup Language
-    - Outlines how things should be
+- Markup Language: Outlines how things should be
 - Hyper text
-
 DOM - Document Object Model
 - The thing the browser creates based on your HTML.
 - Used to render elements to the user.
-
 - Use w3schools.com for aid if needed.
 
 August 29
@@ -18,7 +15,11 @@ August 29
 - With spacing on padding, it is discouraged from using pixels because it is limited by a few things like font size as well as screen size. Instead use rem. There is a way to convert from px to rem using a converter.
 - Everything you see on the website is found in the body element.
 - !Important is a way to override some CSS with things like colors.
-- When using CSS, you can create a different file for them (.css) and then use a <link href> element to reference a specific file for them.
+- When using CSS, you can create a different file (.css) for them and then use a <link href> element to reference a specific file for them.
 
 September 3
 - Use this website to brush up on CSS: https://flukeout.github.io/
+
+September 5
+- To bring bootstrap into your page, you can search for a link online to add it. https://getbootstrap.com/docs/4.0/getting-started/download/ is a good open source place for it.
+- https://pixabay.com/service/license-summary/ use this for images for my websites.
