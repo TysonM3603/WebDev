@@ -23,3 +23,7 @@ September 3
 September 5
 - To bring bootstrap into your page, you can search for a link online to add it. https://getbootstrap.com/docs/4.0/getting-started/download/ is a good open source place for it.
 - https://pixabay.com/service/license-summary/ use this for images for my websites.
+
+September 12
+- Use rem instead of px with sizing.
+- Flex is a way to make your site responsive to the window changing size.
