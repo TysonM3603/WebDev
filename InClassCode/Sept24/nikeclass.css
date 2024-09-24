@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --dark-color: #333333;
+  --light-color: #ecf5e7;
+  --light-gray: #d2d2d2;
+}
+
+body {
+  font-family: "Montserrat", sans-serif !important;
+  background-color: var(--light-gray);
+}
+
+.flex-container {
+  display: flex;
+}
+
+.navigation-bar {
+  background-color: var(--dark-color);
+  color: white;
+  text-transform: uppercase;
+  padding: 0.75rem;
+  justify-content: space-between;
+  align-items: center;
+  font-size: large;
+}
+
+.circle {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: var(--light-color);
+}
+
+.gamecube-image {
+  width: 100%;
+}
+
+.body-image {
+  width: 100%;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.subtext {
+  margin: 1rem;
+}
+
+@media (min-width: 768px) {
+  .gamecube-image {
+    width: 100%;
+    max-height: 30rem;
+  }
+
+  .body-image {
+    width: 50%;
+  }
+
+  .image-container {
+    display: flex;
+    flex-direction: column;
+    flex-flow: row wrap;
+  }
+}
+@media (min-width: 1024px) {
+  .gamecube-image {
+    width: 100%;
+    max-height: 30rem;
+  }
+
+  .body-image {
+    width: 100%;
+  }
+
+  .image-container {
+    display: flex;
+    flex-direction: row;
+    flex-flow: row;
+  }
+}
