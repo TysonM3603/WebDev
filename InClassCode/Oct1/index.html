@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- This is the way to link a js file to html -->
+    <link rel="stylesheet" href="Style.css" />
+  </head>
+  <body>
+    <div id="section1" class="section">This is section 1</div>
+    <div id="section2" class="section d-none">This is section 2 (hidden)</div>
+    <button id="toggleBtn">Toggle Section</button>
+
+    <script>
+      // let title = document.getElementById("title");
+      // Console.log(title.textContent);
+
+      // function changeTitle()
+      // {
+      //   const title = document.getElementById("title");
+      //   title.textContent = "New Title";
+      //   title.style.color = "blue";
+      // }
+
+      $("#toggleBtn").click(function () {
+        $("#section2").toggleClass("d-none");
+      });
+
+      $("#section2").hover(
+        function () {
+          $(this).css("background-color", "var(--primary-color)");
+          $(this).css("color", "black");
+        },
+        function () {
+          $(this).css("background-color", "var(--secondary-color)");
+          $(this).css("color", "red");
+        }
+      );
+    </script>
+  </body>
+</html>

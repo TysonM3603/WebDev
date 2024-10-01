@@ -1,0 +1,18 @@
+.d-none
+{
+   display: none;
+}
+
+:root
+{
+   --primary-color: #3498db;
+   --secondary-color: #2ecc71;
+   --font-size: 16px;
+   --spacing: 1rem;
+}
+
+.change-color
+{
+   background-color: black;
+   color: var(--primary-color);
+}

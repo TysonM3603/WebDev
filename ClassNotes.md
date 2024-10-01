@@ -27,3 +27,7 @@ September 5
 September 12
 - Use rem instead of px with sizing.
 - Flex is a way to make your site responsive to the window changing size.
+
+October 1
+- DOM: Document Object Model.
+- Go to W3Schools to download jQuery. Look at the jQuery website to figure out what version you need to be updated to.
