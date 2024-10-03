@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <link rel="stylesheet" href="Css.css" />
+   </head>
+   <body>
+      <h1 id="title">Default Title</h1>
+      <p id="paragraph">Some text placed here.</p>
+      <button onclick="changeTitle()">Change Title</button>
+
+      <ul id="list">
+         <li>List Item 1</li>
+         <li>List Item 2</li>
+         <li>List Item 3</li>
+      </ul>
+      <button onclick="addItem()">Add New Item</button>
+
+      <script>
+         let title = document.getElementById("title");
+         Console.log(title.textContent);
+         
+         function changeTitle()
+         {
+            const title = document.getElementById("title");
+            title.textContent = "Hello, Javascript!";
+
+            const paragraph = document.getElementById("paragraph");
+            paragraph.textContent = "The title has been changed.";
+         }
+
+         function addItem()
+         {
+            const list = document.getElementById("list");
+            let li = document.createElement("li");
+            li.textContent = "List Item ";
+            list.appendChild(li);
+         }
+      </script>
+   </body>
+</html>
