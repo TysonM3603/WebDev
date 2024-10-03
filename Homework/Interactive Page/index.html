@@ -2,7 +2,6 @@
 <html>
    <head>
       <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-      <link rel="stylesheet" href="Css.css" />
    </head>
    <body>
       <h1 id="title">Default Title</h1>
@@ -17,23 +16,24 @@
       <button onclick="addItem()">Add New Item</button>
 
       <script>
-         let title = document.getElementById("title");
+         let title = document.getElementById('title');
          Console.log(title.textContent);
          
          function changeTitle()
          {
-            const title = document.getElementById("title");
-            title.textContent = "Hello, Javascript!";
+            const title = document.getElementById('title');
+            title.textContent = 'Hello, Javascript!';
 
-            const paragraph = document.getElementById("paragraph");
-            paragraph.textContent = "The title has been changed.";
+            const paragraph = document.getElementById('paragraph');
+            paragraph.textContent = 'The title has been changed.';
          }
 
          function addItem()
          {
-            const list = document.getElementById("list");
-            let li = document.createElement("li");
-            li.textContent = "List Item ";
+            let list = document.getElementById('list');
+            let listSize = list.getElementsByTagName('li').length;
+            let li = document.createElement('li');
+            li.textContent = 'List Item ' + (listSize + 1);
             list.appendChild(li);
          }
       </script>

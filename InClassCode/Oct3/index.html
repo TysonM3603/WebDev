@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="site.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  </head>
+  <body>
+    <select id="category">
+      <option value="fruits">Fruits</option>
+      <option value="vegetables">Vegetables</option>
+      <option value="dairy">Dairy</option>
+    </select>
+    <input type="text" id="itemInput" placeholder="Enter an item" />
+    <button id="addItemBtn">Add Item</button>
+
+    <script>
+      $('#addItemBtn').on('click', function () {
+        let dropDown = $('#category');
+        let newCategory = $('#itemInput').val();
+        dropDown.append('<option value="' + newCategory.toLowerCase() + '">' + newCategory + '</option>');
+        $('#itemInput').val(''); //clear it
+        alert('Successfully added to the list'); //Default browser alert
+      });
+    </script>
+    <!-- <h2>Shopping List</h2>
+    <h3>Fruits</h3>
+    <ul id="fruitsList"></ul>
+
+    <h3>Vegetables</h3>
+    <ul id="vegetablesList"></ul>
+
+    <h3>Dairy</h3>
+    <ul id="dairyList"></ul>
+
+    <form id="myForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" />
+      <span id="nameError" style="color: red"></span>
+      <br />
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" />
+      <span id="emailError" style="color: red"></span>
+      <br />
+
+      <button type="submit">Submit</button>
+    </form> -->
+  </body>
+</html>
