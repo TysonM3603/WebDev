@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="Style.css" />
+  </head>
+  <body>
+   <h1>To-Do List</h1>
+   <h4>To add a task, input a title and hit the 'Add Task' button. To mark as completed, click the task on the list.</h4> 
+   
+   <input type="text" id="itemInput" placeholder="Enter a task" />
+    <button id="addTaskBtn">Add Task</button>
+    <ul id="list"></ul>
+
+    <script>
+      $('#addTaskBtn').on('click', function () 
+      {
+         let list = document.getElementById('list');
+         let newTask = $('#itemInput').val();
+         let li = document.createElement('li');
+         let button = document.createElement('button');
+         const ul = document.getElementById('myLi');
+         li.id = 'myLi';
+
+         button.textContent = 'Remove Task';
+         button.addEventListener('click', () => 
+         {
+            list.removeChild(li);
+         });
+
+         li.textContent = newTask + ' ';
+         li.appendChild(button);
+         list.appendChild(li);
+         $('#itemInput').val('');
+
+         $('#myLi').click(function() {
+            $(this).toggleClass('completed');
+         });
+      });
+    </script>
+  </body>
+</html>
