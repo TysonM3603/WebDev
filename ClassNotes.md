@@ -31,3 +31,7 @@ September 12
 October 1
 - DOM: Document Object Model.
 - Go to W3Schools to download jQuery. Look at the jQuery website to figure out what version you need to be updated to.
+
+October 8
+- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> Use this to add JavaScript to your html.
+- Function: allow you to group a set of operations together so they can be reused whenever needed; this helps avoid repetition and makes things more organized.
