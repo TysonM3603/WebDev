@@ -35,3 +35,6 @@ October 1
 October 8
 - <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> Use this to add JavaScript to your html.
 - Function: allow you to group a set of operations together so they can be reused whenever needed; this helps avoid repetition and makes things more organized.
+
+October 10
+- In order to link a js file to your html file, you need to add the <script src="File link.js"></script> tag into the body, not the head.

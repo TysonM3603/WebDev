@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <link rel="stylesheet" href="Tables and Rows.css">
+   </head>
+   <body>
+      <form id="row-form">
+         <input type="text" id="name" placeholder="Name" required>
+         <input type="text" id="age" placeholder="Age" required>
+         <input type="text" id="occupation" placeholder="Occupation" required>
+         <button type="submit" id="add-row-btn">Add Row</button>
+      </form>
+
+      <table id="dynamic-table" border="1">
+         <thead>
+            <tr>
+               <th>Name</th>
+               <th>Age</th>
+               <th>Occupation</th>
+               <th>Action</th>
+            </tr>
+         </thead>
+         <tbody>
+            <tr>
+               <td>John Doe</td>
+               <td>28</td>
+               <td>Developer</td>
+               <td><button class="delete-btn">Delete</button></button></td>
+            </tr>
+         </tbody>
+      </table>
+      <script src="Tables and Rows.js"></script>
+   </body>
+</html>
