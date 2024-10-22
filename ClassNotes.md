@@ -38,3 +38,6 @@ October 8
 
 October 10
 - In order to link a js file to your html file, you need to add the <script src="File link.js"></script> tag into the body, not the head.
+
+October 22
+- API: application programming interface is a connection between computers or between computer programs. It is a type of software interface, offering a service to other pieces of software. It lets you retrieve data from an online source.
