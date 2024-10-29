@@ -41,3 +41,7 @@ October 10
 
 October 22
 - API: application programming interface is a connection between computers or between computer programs. It is a type of software interface, offering a service to other pieces of software. It lets you retrieve data from an online source.
+
+October 29
+- In order to run the WebApplication stuff, you have to dotnet run the program console project then copy/paste the localhost url into a web browser.
+Example: dotnet run --project .\MVCAjaxApi\mvc\ (See Oct29 in the InClassCode folder)
