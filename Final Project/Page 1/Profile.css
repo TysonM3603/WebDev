@@ -12,6 +12,11 @@ h2 {
    margin-top: 80px;
 }
 
+h6 {
+   display: flex;
+   justify-content: center;
+}
+
 :root {
    --primary-color: #3b384d;
    --secondary-color: #bf912b;
@@ -23,7 +28,8 @@ h2 {
    display: flex;
    justify-content: center !important;
    width: 100%;
-   height: 150rem;
+   height: 125rem;
+   border: none;
 }
 
 .topNav {
