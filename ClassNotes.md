@@ -45,3 +45,7 @@ October 22
 October 29
 - In order to run the WebApplication stuff, you have to dotnet run the program console project then copy/paste the localhost url into a web browser.
 Example: dotnet run --project .\MVCAjaxApi\mvc\ (See Oct29 in the InClassCode folder)
+
+November 14
+- There are many different domain places that you can purchase a domain from.
+- Microsoft Azure can be used to make a static web app.

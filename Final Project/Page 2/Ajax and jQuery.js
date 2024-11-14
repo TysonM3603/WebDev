@@ -7,25 +7,26 @@ function closeNav() {
 }
 
 $(document).ready(function() {
-   $('#row-form').submit(function(event) {
-       event.preventDefault();
+   $('#row-form').on('click', '.add-row-btn', function(event) {
+      debugger
+      event.preventDefault();
 
-       let name = $('#name').val();
-       let age = $('#age').val();
-       let occupation = $('#occupation').val();
+      let name = $('#name').val();
+      let age = $('#age').val();
+      let occupation = $('#occupation').val();
 
-       let newRow = `<tr>
+      let newRow = `<tr>
                        <td>${name}</td>
                        <td>${age}</td>
                        <td>${occupation}</td>
                        <td><button class="delete-btn">Delete</button></td>
-                     </tr>`;
-       $('#dynamic-table tbody').append(newRow);
+                    </tr>`;
+      $('#dynamic-table tbody').append(newRow);
 
-       $('#row-form')[0].reset();
+      $('#row-form')[0].reset();
    });
 
    $(document).on('click', '.delete-btn', function() {
-       $(this).closest('tr').remove();
+      $(this).closest('tr').remove();
    });
 });
