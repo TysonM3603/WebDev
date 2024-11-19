@@ -29,31 +29,25 @@
     </header>
 
     <main>
-      <form id="row-form">
-         <input type="text" id="name" placeholder="Name" required>
-         <input type="text" id="age" placeholder="Age" required>
-         <input type="text" id="occupation" placeholder="Occupation" required>
-         <button type="submit" id="add-row-btn">Add Row</button>
-      </form>
+     <h1>Magic: The Gathering Card Search</h1>
 
-      <table id="dynamic-table" border="1">
+     <input type="text" id="mtg" placeholder="Enter card name" />
+     <button id="viewMtg">Search</button>
+ 
+     <table id="dynamic-table" border="1">
          <thead>
-            <tr>
-               <th>Name</th>
-               <th>Age</th>
-               <th>Occupation</th>
-               <th>Action</th>
-            </tr>
+             <tr>
+                 <th>Name</th>
+                 <th>Mana Cost</th>
+                 <th>Type</th>
+                 <th>Rarity</th>
+                 <th>Action</th>
+             </tr>
          </thead>
          <tbody>
-            <tr>
-               <td>John Doe</td>
-               <td>28</td>
-               <td>Developer</td>
-               <td><button class="delete-btn">Delete</button></button></td>
-            </tr>
+             <!-- Table rows will be added here -->
          </tbody>
-      </table>
+     </table>
     </main>
 
     <footer>

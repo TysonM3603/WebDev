@@ -7,26 +7,65 @@ function closeNav() {
 }
 
 $(document).ready(function() {
-   $('#row-form').on('click', '.add-row-btn', function(event) {
-      debugger
-      event.preventDefault();
+   // Function to populate table with card data
+   function populateCardTable(cards) {
+       // Clear existing rows
+       $('#dynamic-table tbody').empty();
 
-      let name = $('#name').val();
-      let age = $('#age').val();
-      let occupation = $('#occupation').val();
+       // Loop through the cards array and create rows
+       cards.forEach(card => {
+           const newRow = `
+               <tr>
+                   <td>${card.name}</td>
+                   <td>${card.manaCost}</td>
+                   <td>${card.type}</td>
+                   <td>${card.rarity}</td>
+                   <td><button class="delete-btn">Delete</button></td>
+               </tr>
+           `;
+           $('#dynamic-table tbody').append(newRow);
+       });
+   }
 
-      let newRow = `<tr>
-                       <td>${name}</td>
-                       <td>${age}</td>
-                       <td>${occupation}</td>
-                       <td><button class="delete-btn">Delete</button></td>
-                    </tr>`;
-      $('#dynamic-table tbody').append(newRow);
-
-      $('#row-form')[0].reset();
+   // Automatically search for card 'a' when page loads
+   const defaultCardSearch = 'Phage the Untouchable';
+   $.ajax({
+       url: `https://api.magicthegathering.io/v1/cards?name=${defaultCardSearch}`,
+       method: 'GET',
+       success: function(response) {
+           if (response.cards && response.cards.length > 0) {
+               populateCardTable(response.cards);
+           } else {
+               $('#mtgInfo').html('No cards found for "Phage the Untouchable".');
+           }
+       },
+       error: function() {
+           $('#mtgInfo').html('Error fetching card data.');
+       }
    });
 
+   // Event handler for search button
+   $('#viewMtg').on('click', function () {
+       const cardName = $('#mtg').val().toLowerCase();
+
+       $.ajax({
+           url: `https://api.magicthegathering.io/v1/cards?name=${cardName}`,
+           method: 'GET',
+           success: function(response) {
+               if (response.cards && response.cards.length > 0) {
+                   populateCardTable(response.cards);
+               } else {
+                   $('#mtgInfo').html('Card not found. Please try again.');
+               }
+           },
+           error: function() {
+               $('#mtgInfo').html('Error fetching card data.');
+           }
+       });
+   });
+
+   // Delete a row from the table when the delete button is clicked
    $(document).on('click', '.delete-btn', function() {
-      $(this).closest('tr').remove();
+       $(this).closest('tr').remove();
    });
 });
