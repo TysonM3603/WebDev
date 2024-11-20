@@ -112,8 +112,10 @@ main {
 
 @media screen and (max-width: 768px) {
   .topNav {
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row; /* Ensure layout stays horizontal */
+    justify-content: space-between; /* Keep space between items */
+    align-items: center; /* Maintain vertical alignment */
+    padding: 10px;
   }
 
   .titleLine {
@@ -132,19 +134,17 @@ main {
     font-size: 14px;
   }
 
-  th,
-  td {
+  th, td {
     padding: 8px;
-  }
-
-  .topNav {
-    padding: 10px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .topNav {
     padding: 8px;
+    flex-direction: row; /* Ensure layout stays horizontal */
+    justify-content: space-between; /* Keep space between items */
+    align-items: center; /* Maintain vertical alignment */
   }
 
   .titleLine {
@@ -165,18 +165,7 @@ main {
     font-size: 12px;
   }
 
-  th,
-  td {
+  th, td {
     padding: 6px;
-  }
-}
-
-@media screen and (max-height: 450px) {
-  .sideNav {
-    padding: 15px;
-  }
-
-  .sideNav a {
-    font-size: 16px;
   }
 }

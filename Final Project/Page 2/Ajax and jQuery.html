@@ -3,7 +3,7 @@
   <head>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="Ajax and jQuery.js"></script>
-    <link rel="stylesheet" href="Ajax and jQuery.css"/>
+    <link rel="stylesheet" href="Ajax and jQuery.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -12,15 +12,21 @@
     <!-- Use Fontawesome to look for icons if needed. Be sure to include the proper bootstrap in the head though. -->
   </head>
   <body>
-   <header>
+    <header>
       <div class="topNav">
         <div class="titleLine">Ajax and jQuery</div>
         <div id="mySideNav" class="sideNav">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+            >&times;</a
+          >
           <a href="/Final Project/Page 1/Social Links.html">Social Links</a>
           <a href="/Final Project/Page 1/Profile.html">Resume Page</a>
-          <a href="/Final Project/Page 3/CSS Copy Page.html">CSS Style Page Copy Showcase</a>
-          <a href="/Final Project/Page 4/Experiment Page.html">Cool Self-taught Thing</a>
+          <a href="/Final Project/Page 3/CSS Copy Page.html"
+            >CSS Style Page Copy Showcase</a
+          >
+          <a href="/Final Project/Page 4/Experiment Page.html"
+            >Cool Self-taught Thing</a
+          >
         </div>
         <button class="sideNavBtn" onclick="openNav()">
           <i class="fa-solid fa-bars"></i>
@@ -29,25 +35,47 @@
     </header>
 
     <main>
-     <h1>Magic: The Gathering Card Search</h1>
+      <h1>Magic: The Gathering Card Search</h1>
 
-     <input type="text" id="mtg" placeholder="Enter card name" />
-     <button id="viewMtg">Search</button>
- 
-     <table id="dynamic-table" border="1">
-         <thead>
-             <tr>
-                 <th>Name</th>
-                 <th>Mana Cost</th>
-                 <th>Type</th>
-                 <th>Rarity</th>
-                 <th>Action</th>
-             </tr>
-         </thead>
-         <tbody>
-             <!-- Table rows will be added here -->
-         </tbody>
-     </table>
+      <h3>Search for a card and it will be displayed in the table</h3>
+      <input type="text" id="mtg" placeholder="Enter card name" />
+      <button id="viewMtg">Search</button>
+
+      <div>
+        <h3>Filtered table search</h3>
+        <input
+          type="text"
+          id="table-search"
+          placeholder="Search specific cards"
+        />
+      </div>
+
+      <div id="add-card-form">
+        <h3>Add a New Card to the table</h3>
+        <input type="text" id="card-name" placeholder="Card Name" />
+        <input type="text" id="card-manaCost" placeholder="Mana Cost" />
+        <input type="text" id="card-type" placeholder="Type" />
+        <input type="text" id="card-rarity" placeholder="Rarity" />
+        <input type="text" id="card-set" placeholder="Set" />
+        <button id="add-card-btn">Add Card</button>
+      </div>
+
+      <h3>Click headers of columns to sort them by ascending/descending order</h3>
+      <table id="dynamic-table" border="1">
+        <thead>
+          <tr>
+            <th class="sortable" data-column="name">Name</th>
+            <th class="sortable" data-column="manaCost">Mana Cost</th>
+            <th class="sortable" data-column="type">Type</th>
+            <th class="sortable" data-column="rarity">Rarity</th>
+            <th class="sortable" data-column="set">Set</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Rows will be dynamically populated -->
+        </tbody>
+      </table>
     </main>
 
     <footer>
