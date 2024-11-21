@@ -18,11 +18,17 @@ $(document).ready(function () {
                    <td>${card.type}</td>
                    <td>${card.rarity}</td>
                    <td>${card.set}</td>
-                   <td><button class="delete-btn">Delete</button></td>
+                   <td>
+                      <button class="edit-btn">Edit</button>
+                      <button class="delete-btn">Delete</button>
+                   </td>
                </tr>
            `;
       $("#dynamic-table tbody").append(newRow);
     });
+
+    // Reattach the edit button click event after rows are dynamically added
+    attachEditEvent();
   }
 
   const defaultCardSearch = "Phage the Untouchable";
@@ -68,18 +74,24 @@ $(document).ready(function () {
                 <td>${card.type}</td>
                 <td>${card.rarity}</td>
                 <td>${card.set}</td>
-                <td><button class="delete-btn">Delete</button></td>
+                <td>
+                  <button class="edit-btn">Edit</button>
+                  <button class="delete-btn">Delete</button>
+                </td>
             </tr>
         `;
     $("#dynamic-table tbody").append(newRow);
+
+    // Reattach the edit button click event after adding a new row
+    attachEditEvent();
   }
 
   $("#add-card-btn").on("click", function () {
-    const cardName = $("#card-name").val();
-    const manaCost = $("#card-manaCost").val();
-    const cardType = $("#card-type").val();
-    const rarity = $("#card-rarity").val();
-    const set = $("#card-set").val();
+    const cardName = $("#add-card-name").val();
+    const manaCost = $("#add-card-manaCost").val();
+    const cardType = $("#add-card-type").val();
+    const rarity = $("#add-card-rarity").val();
+    const set = $("#add-card-set").val();
 
     if (!cardName || !manaCost || !cardType || !rarity || !set) {
       alert("Please fill in all fields before adding a card.");
@@ -96,15 +108,14 @@ $(document).ready(function () {
 
     addCardRow(newCard);
 
-    $("#card-name").val("");
-    $("#card-manaCost").val("");
-    $("#card-type").val("");
-    $("#card-rarity").val("");
-    $("#card-set").val("");
+    $("#add-card-name").val("");
+    $("#add-card-manaCost").val("");
+    $("#add-card-type").val("");
+    $("#add-card-rarity").val("");
+    $("#add-card-set").val("");
   });
 
-  $(document).on("click", ".delete-btn", function ()
-  {
+  $(document).on("click", ".delete-btn", function () {
     $(this).closest("tr").remove();
   });
 
@@ -112,14 +123,11 @@ $(document).ready(function () {
     const searchQuery = $(this).val().toLowerCase();
     $("#dynamic-table tbody tr").each(function () {
       const rowText = $(this).text().toLowerCase();
-        if (rowText.includes(searchQuery))
-        {
-            $(this).show();
-        }
-        else
-        {
-            $(this).hide();
-        }
+      if (rowText.includes(searchQuery)) {
+        $(this).show();
+      } else {
+        $(this).hide();
+      }
     });
   });
 
@@ -147,10 +155,74 @@ $(document).ready(function () {
   $(".sortable").on("click", function () {
     const column = $(this).data("column");
     const columnIndex = $(this).index();
-    const ascending = currentSort[column] ? !currentSort[column] : true; // Toggle sort order
+    const ascending = currentSort[column] ? !currentSort[column] : true;
 
     currentSort = { [column]: ascending };
 
     sortTable(columnIndex, ascending);
   });
+
+  var modal = document.getElementById("myModal");
+  var span = document.getElementsByClassName("close")[0];
+
+  var form = document.getElementById("editForm");
+  var cardNameInput = document.getElementById("card-name");
+  var cardManaInput = document.getElementById("card-manaCost");
+  var cardTypeInput = document.getElementById("card-type");
+  var cardRarityInput = document.getElementById("card-rarity");
+  var cardSetInput = document.getElementById("card-set");
+
+  var selectedRow;
+
+  // Attach the edit button event dynamically
+  function attachEditEvent() {
+    $(".edit-btn").off("click").on("click", function () {
+      selectedRow = $(this).closest("tr")[0];
+
+      var cardName = selectedRow.cells[0].innerText;
+      var cardMana = selectedRow.cells[1].innerText;
+      var cardType = selectedRow.cells[2].innerText;
+      var cardRarity = selectedRow.cells[3].innerText;
+      var cardSet = selectedRow.cells[4].innerText;
+
+      cardNameInput.value = cardName;
+      cardManaInput.value = cardMana;
+      cardTypeInput.value = cardType;
+      cardRarityInput.value = cardRarity;
+      cardSetInput.value = cardSet;
+
+      modal.style.display = "block";
+    });
+  }
+
+  span.onclick = function () {
+    modal.style.display = "none";
+  };
+
+  window.onclick = function (event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+    }
+  };
+
+  form.onsubmit = function (e) {
+    e.preventDefault();
+
+    var updatedCardName = cardNameInput.value;
+    var updatedCardMana = cardManaInput.value;
+    var updatedCardType = cardTypeInput.value;
+    var updatedCardRarity = cardRarityInput.value;
+    var updatedCardSet = cardSetInput.value;
+
+    if (selectedRow) {
+      selectedRow.cells[0].innerText = updatedCardName;
+      selectedRow.cells[1].innerText = updatedCardMana;
+      selectedRow.cells[2].innerText = updatedCardType;
+      selectedRow.cells[3].innerText = updatedCardRarity;
+      selectedRow.cells[4].innerText = updatedCardSet;
+    }
+
+    modal.style.display = "none";
+    selectedRow = null;
+  };
 });

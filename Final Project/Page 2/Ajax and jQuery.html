@@ -52,11 +52,11 @@
 
       <div id="add-card-form">
         <h3>Add a New Card to the table</h3>
-        <input type="text" id="card-name" placeholder="Card Name" />
-        <input type="text" id="card-manaCost" placeholder="Mana Cost" />
-        <input type="text" id="card-type" placeholder="Type" />
-        <input type="text" id="card-rarity" placeholder="Rarity" />
-        <input type="text" id="card-set" placeholder="Set" />
+        <input type="text" id="add-card-name" placeholder="Card Name" />
+        <input type="text" id="add-card-manaCost" placeholder="Mana Cost" />
+        <input type="text" id="add-card-type" placeholder="Type" />
+        <input type="text" id="add-card-rarity" placeholder="Rarity" />
+        <input type="text" id="add-card-set" placeholder="Set" />
         <button id="add-card-btn">Add Card</button>
       </div>
 
@@ -69,13 +69,43 @@
             <th class="sortable" data-column="type">Type</th>
             <th class="sortable" data-column="rarity">Rarity</th>
             <th class="sortable" data-column="set">Set</th>
-            <th>Action</th>
+            <th>Actions</th>
           </tr>
         </thead>
         <tbody>
-          <!-- Rows will be dynamically populated -->
+          <!-- Rows will be populated using the API -->
         </tbody>
       </table>
+
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Edit Card Details</h2>
+          <form id="editForm">
+            <label for="card-name">Card Name:</label>
+            <input type="text" id="card-name" name="name" required>
+            <div></div>
+
+            <label for="card-manaCost">Mana Cost:</label>
+            <input type="text" id="card-manaCost" name="manaCost" required>
+            <div></div>
+
+            <label for="card-type">Card Type:</label>
+            <input type="text" id="card-type" name="card-type" required>
+            <div></div>
+
+            <label for="card-rarity">Card Rarity:</label>
+            <input type="text" id="card-rarity" name="card-rarity" required>
+            <div></div>
+
+            <label for="card-set">Card Set:</label>
+            <input type="text" id="card-set" name="card-set" required>
+            <div></div>
+
+            <button type="submit">Save Changes</button>
+          </form>
+        </div>
+      </div>    
     </main>
 
     <footer>
