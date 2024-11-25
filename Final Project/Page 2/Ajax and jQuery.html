@@ -60,7 +60,9 @@
         <button id="add-card-btn">Add Card</button>
       </div>
 
-      <h3>Click headers of columns to sort them by ascending/descending order</h3>
+      <h3>
+        Click headers of columns to sort them by ascending/descending order
+      </h3>
       <table id="dynamic-table" border="1">
         <thead>
           <tr>
@@ -83,29 +85,52 @@
           <h2>Edit Card Details</h2>
           <form id="editForm">
             <label for="card-name">Card Name:</label>
-            <input type="text" id="card-name" name="name" required>
+            <input type="text" id="card-name" name="name" required />
             <div></div>
 
             <label for="card-manaCost">Mana Cost:</label>
-            <input type="text" id="card-manaCost" name="manaCost" required>
+            <input type="text" id="card-manaCost" name="manaCost" required />
             <div></div>
 
             <label for="card-type">Card Type:</label>
-            <input type="text" id="card-type" name="card-type" required>
+            <input type="text" id="card-type" name="card-type" required />
             <div></div>
 
             <label for="card-rarity">Card Rarity:</label>
-            <input type="text" id="card-rarity" name="card-rarity" required>
+            <input type="text" id="card-rarity" name="card-rarity" required />
             <div></div>
 
             <label for="card-set">Card Set:</label>
-            <input type="text" id="card-set" name="card-set" required>
+            <input type="text" id="card-set" name="card-set" required />
             <div></div>
 
             <button type="submit">Save Changes</button>
           </form>
         </div>
-      </div>    
+      </div>
+
+      <div id="notification" class="notification hidden">
+        <p id="notification-message"></p>
+      </div>
+      <style>
+        .notification {
+          position: fixed;
+          bottom: 20px;
+          right: 20px;
+          padding: 15px;
+          background-color: #4caf50;
+          color: white;
+          border-radius: 5px;
+          z-index: 1000;
+          display: none;
+        }
+        .notification.error {
+          background-color: #f44336;
+        }
+        .hidden {
+          display: none !important;
+        }
+      </style>
     </main>
 
     <footer>

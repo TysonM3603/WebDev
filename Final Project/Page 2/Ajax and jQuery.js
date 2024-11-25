@@ -31,6 +31,22 @@ $(document).ready(function () {
     attachEditEvent();
   }
 
+  function showNotification(message, isSuccess = true) {
+    const notification = $("#notification");
+    const messageElement = $("#notification-message");
+
+    messageElement.text(message);
+    notification.removeClass("hidden");
+    notification.toggleClass("error", !isSuccess);
+    notification.fadeIn();
+
+    setTimeout(() => {
+      notification.fadeOut(() => {
+        notification.addClass("hidden");
+      });
+    }, 3000); // Notification stays visible for 3 seconds
+  }
+
   const defaultCardSearch = "Phage the Untouchable";
   $.ajax({
     url: `https://api.magicthegathering.io/v1/cards?name=${defaultCardSearch}`,
@@ -94,7 +110,10 @@ $(document).ready(function () {
     const set = $("#add-card-set").val();
 
     if (!cardName || !manaCost || !cardType || !rarity || !set) {
-      alert("Please fill in all fields before adding a card.");
+      showNotification(
+        "Please fill in all fields before adding a card.",
+        false
+      );
       return;
     }
 
@@ -107,6 +126,7 @@ $(document).ready(function () {
     };
 
     addCardRow(newCard);
+    showNotification("Card added successfully!");
 
     $("#add-card-name").val("");
     $("#add-card-manaCost").val("");
@@ -117,6 +137,7 @@ $(document).ready(function () {
 
   $(document).on("click", ".delete-btn", function () {
     $(this).closest("tr").remove();
+    showNotification("Card deleted successfully!");
   });
 
   $("#table-search").on("input", function () {
@@ -220,6 +241,10 @@ $(document).ready(function () {
       selectedRow.cells[2].innerText = updatedCardType;
       selectedRow.cells[3].innerText = updatedCardRarity;
       selectedRow.cells[4].innerText = updatedCardSet;
+
+      showNotification("Card edited successfully!");
+    } else {
+      showNotification("Error editing card.", false);
     }
 
     modal.style.display = "none";
