@@ -82,6 +82,11 @@ h6 {
   margin: 0;
 }
 
+.sideNavBtn:hover {
+  background-color: #b18628;
+  cursor: pointer;
+}
+
 div.container {
   text-align: center;
 }
@@ -116,8 +121,6 @@ main {
   background-color: gray;
   position: relative;
   justify-content: center;
-  margin-left: 10rem;
-  margin-right: 9rem;
 }
 
 #progressText {
@@ -265,8 +268,19 @@ main {
 }
 
 #restartButton {
-  border-radius: 3px;
+  border-radius: 5px;
   margin-top: 10px;
+  background-color: var(--primary-color);
+  color: var(--accent-color1);
+  height: 2rem;
+  width: 5rem;
+  transition: transform 0.3s ease, box-shadow 0.3sec ease;
+}
+
+#restartButton:hover {
+  cursor: pointer;
+  transform: scale(1.010);
+  box-shadow: 0 1px 2.5px var(--accent-color2);
 }
 
 h1 {

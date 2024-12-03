@@ -81,6 +81,11 @@ h2, h6 {
   margin: 0;
 }
 
+.sideNavBtn:hover {
+  background-color: #b18628;
+  cursor: pointer;
+}
+
 div.container {
   text-align: center;
 }
@@ -98,6 +103,16 @@ th, td {
 
 button {
   margin: 5px;
+  background-color: var(--primary-color);
+  color: var(--accent-color1);
+  border-radius: 3px;
+  transition: transform 0.3s ease, box-shadow 0.3sec ease;
+}
+
+button:hover{
+  cursor: pointer;
+  transform: scale(1.010);
+  box-shadow: 0 0.75px 2.5px var(--accent-color2);
 }
 
 form {

@@ -95,7 +95,7 @@ function update() {
 
   if (
     snakeX < 0 ||
-    snakeX > total_col * blockSize ||
+    snakeX > total_col * blockSize - 1 ||
     snakeY < 0 ||
     snakeY > total_row * blockSize
   ) {
