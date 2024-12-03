@@ -16,17 +16,46 @@
       <div class="topNav">
         <div class="titleLine">Experiment Page</div>
         <div id="mySideNav" class="sideNav">
-          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+          <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"
+            >&times;</a
+          >
           <a href="/Final Project/Page 1/Social Links.html">Social Links</a>
           <a href="/Final Project/Page 1/Profile.html">Resume Page</a>
-          <a href="/Final Project/Page 2/Ajax and jQuery.html">Ajax/jQuery Showcase</a>
-          <a href="/Final Project/Page 3/CSS Copy Page.html">CSS Style Page Copy Showcase</a>
+          <a href="/Final Project/Page 2/Ajax and jQuery.html"
+            >Ajax/jQuery Showcase</a
+          >
         </div>
         <button class="sideNavBtn" onclick="openNav()">
           <i class="fa-solid fa-bars"></i>
         </button>
       </div>
     </header>
+
+    <main>
+      <h1 style="margin-bottom: 0.3rem">Snake</h1>
+      <div style="font-size: larger">
+        Can you get your snake long enough to fill the progress bar?
+      </div>
+      <div id="myProgress">
+        <div id="myBar">
+          <span id="progressText">0%</span>
+        </div>
+      </div>
+
+      <div style="font-size: larger; margin: 1rem">
+        Use WASD to move your snake!
+      </div>
+      <canvas id="board"></canvas>
+      <div id="popup">
+        <h2 id="popupTitle">Game Over</h2>
+        <p id="popupMessage">You lost the game!</p>
+        <button id="closePopup">Close</button>
+      </div>
+      <div id="overlay"></div>
+
+      <div>Click this button to restart the game!</div>
+      <button id="restartButton">Restart</button>
+    </main>
 
     <footer>
       <h6><i class="fa-regular fa-copyright"></i>Copyright TysonMeade 2024</h6>

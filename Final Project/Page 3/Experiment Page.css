@@ -16,7 +16,7 @@ h6 {
 
 :root {
   --primary-color: #3b384d;
-  --secondary-color: #bf912b;
+  --secondary-color: #bf902b;
   --accent-color1: white;
   --accent-color2: black;
 }
@@ -108,13 +108,39 @@ form {
 
 main {
   position: relative;
+  text-align: center;
+}
+
+#myProgress {
+  width: 79%;
+  background-color: gray;
+  position: relative;
+  justify-content: center;
+  margin-left: 10rem;
+  margin-right: 9rem;
+}
+
+#progressText {
+  color: black;
+  font-weight: bold;
+  position: absolute;
+  text-align: center;
+  font-size: x-large;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#myBar {
+  width: 0%;
+  height: 30px;
+  background-color: var(--primary-color);
 }
 
 @media screen and (max-width: 768px) {
   .topNav {
-    flex-direction: row; /* Ensure layout stays horizontal */
-    justify-content: space-between; /* Keep space between items */
-    align-items: center; /* Maintain vertical alignment */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px;
   }
 
@@ -134,17 +160,28 @@ main {
     font-size: 14px;
   }
 
-  th, td {
+  th,
+  td {
     padding: 8px;
+  }
+
+  #myProgress {
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  #myBar {
+    height: 25px;
   }
 }
 
 @media screen and (max-width: 480px) {
   .topNav {
     padding: 8px;
-    flex-direction: row; /* Ensure layout stays horizontal */
-    justify-content: space-between; /* Keep space between items */
-    align-items: center; /* Maintain vertical alignment */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .titleLine {
@@ -165,8 +202,73 @@ main {
     font-size: 12px;
   }
 
-  th, td {
+  th,
+  td {
     padding: 6px;
+  }
+
+  #myProgress {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  #myBar {
+    height: 20px;
   }
 }
 
+#popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 400px;
+  background: white;
+  padding: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+}
+
+#popupTitle {
+  text-align: center;
+}
+
+#popupMessage {
+  text-align: center;
+}
+
+#closePopup {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background: var(--secondary-color);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+#restartButton {
+  border-radius: 3px;
+  margin-top: 10px;
+}
+
+h1 {
+  position: relative;
+}
