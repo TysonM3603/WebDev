@@ -2,9 +2,14 @@
 
 body {
   font-family: "Garamond", serif !important;
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   margin: 0;
   padding: 0;
+}
+
+main {
+  padding-left: 0.85rem;
+  padding-right: 0.85rem;
 }
 
 h2, h6 {
@@ -13,15 +18,20 @@ h2, h6 {
   margin-top: 20px;
 }
 
+h3 {
+  margin-top: 8px;
+  margin-bottom: 6px;
+}
+
 :root {
-  --primary-color: #3b384d;
-  --secondary-color: #bf912b;
+  --primary-color: #bf912b;
+  --secondary-color: #3b384d;
   --accent-color1: white;
   --accent-color2: black;
 }
 
 .topNav {
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   padding: 18px 16px;
   display: flex;
   justify-content: space-between;
@@ -72,7 +82,7 @@ h2, h6 {
 }
 
 .sideNavBtn {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   color: var(--accent-color1);
   height: 2rem;
   width: 3rem;
@@ -103,7 +113,7 @@ th, td {
 
 button {
   margin: 5px;
-  background-color: var(--primary-color);
+  background-color: var(--secondary-color);
   color: var(--accent-color1);
   border-radius: 3px;
   transition: transform 0.3s ease, box-shadow 0.3sec ease;
@@ -125,9 +135,9 @@ main {
 
 @media screen and (max-width: 768px) {
   .topNav {
-    flex-direction: row; /* Ensure layout stays horizontal */
-    justify-content: space-between; /* Keep space between items */
-    align-items: center; /* Maintain vertical alignment */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
     padding: 10px;
   }
 
@@ -167,7 +177,7 @@ main {
 }
 
 .modal-content {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
   margin: 5% auto;
   padding-top: 5px;
   padding-left: 10px;
@@ -192,9 +202,9 @@ main {
 @media screen and (max-width: 480px) {
   .topNav {
     padding: 8px;
-    flex-direction: row; /* Ensure layout stays horizontal */
-    justify-content: space-between; /* Keep space between items */
-    align-items: center; /* Maintain vertical alignment */
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
   }
 
   .titleLine {

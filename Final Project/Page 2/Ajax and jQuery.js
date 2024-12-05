@@ -183,6 +183,12 @@ $(document).ready(function () {
     sortTable(columnIndex, ascending);
   });
 
+  var createModal = document.getElementById("createModal");
+
+  $("#createFormOpen").on("click", function () {
+    createModal.style.display = "block";
+  });
+
   var modal = document.getElementById("myModal");
   var span = document.getElementsByClassName("close")[0];
 
@@ -194,7 +200,7 @@ $(document).ready(function () {
   var cardSetInput = document.getElementById("card-set");
 
   var selectedRow;
-
+  
   // Attach the edit button event dynamically
   function attachEditEvent() {
     $(".edit-btn").off("click").on("click", function () {
@@ -218,11 +224,15 @@ $(document).ready(function () {
 
   span.onclick = function () {
     modal.style.display = "none";
+    createModal.style.display = "none";
   };
 
   window.onclick = function (event) {
     if (event.target == modal) {
       modal.style.display = "none";
+    }
+    if (event.target == createModal) {
+      createModal.style.display = "none";
     }
   };
 

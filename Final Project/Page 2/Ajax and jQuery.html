@@ -33,7 +33,7 @@
       <h1>Magic: The Gathering Card Search</h1>
 
       <h3>Search for a card and it will be displayed in the table</h3>
-      <input type="text" id="mtg" placeholder="Enter card name" />
+      <input type="text" id="mtg" placeholder="Phage the Untouchable" />
       <button id="viewMtg">Search</button>
 
       <div>
@@ -45,14 +45,45 @@
         />
       </div>
 
+      <div id="createModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Add a New Card to the table</h2>
+          <form id="add-card-form">
+            <label for="add-card-name">Add Card Name:</label>
+            <input type="text" id="add-card-name" placeholder="Card Name" required/>
+            <div></div>
+
+            <label for="add-card-manaCost">Add Card Mana cost:</label>
+            <input type="text" id="add-card-manaCost" placeholder="Mana Cost" required/>
+            <div></div>
+            
+            <label for="add-card-type">Add Card Type:</label>
+            <input type="text" id="add-card-type" placeholder="Type" required/>
+            <div></div>
+            
+            <label for="add-card-rarity">Add Card Rarity:</label>
+            <input type="text" id="add-card-rarity" placeholder="Rarity" required/>
+            <div></div>
+            
+            <label for="add-card-set">Add Card Set:</label>
+            <input type="text" id="add-card-set" placeholder="Set" required/>
+            <div></div>
+
+            <button id="add-card-btn" type="submit">Add Card</button>
+          </form>
+        </div>
+      </div>
+
       <div id="add-card-form">
         <h3>Add a New Card to the table</h3>
-        <input type="text" id="add-card-name" placeholder="Card Name" />
+        <button id="createFormOpen">Add new card</button>
+        <!-- <input type="text" id="add-card-name" placeholder="Card Name" />
         <input type="text" id="add-card-manaCost" placeholder="Mana Cost" />
         <input type="text" id="add-card-type" placeholder="Type" />
         <input type="text" id="add-card-rarity" placeholder="Rarity" />
         <input type="text" id="add-card-set" placeholder="Set" />
-        <button id="add-card-btn">Add Card</button>
+        <button id="add-card-btn">Add Card</button> -->
       </div>
 
       <h3>
