@@ -133,6 +133,8 @@ $(document).ready(function () {
     $("#add-card-type").val("");
     $("#add-card-rarity").val("");
     $("#add-card-set").val("");
+
+    createModal.style.display = "none";
   });
 
   $(document).on("click", ".delete-btn", function () {
